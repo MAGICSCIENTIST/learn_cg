@@ -128,9 +128,9 @@ export namespace Flame {
                 currentEngery = currentEngery * (isRemain ? 1 : this.params.p_energyDecrease);
                 const percent = currentEngery;
 
-                const x = position.x
-                const y = position.y + i * perStepHeoght
-                const z = position.z
+                const x = position.x + (Math.random() - 0.5) *1
+                const y = position.y + i * perStepHeoght + (Math.random() - 0.5) *0.3
+                const z = position.z + (Math.random() - 0.5) *1
                 positions.push(x, y, z)
 
                 let stepDefine = this._getStep(this.params.step, percent, 'x');
@@ -215,7 +215,7 @@ export namespace Flame {
                 }
 
                 // positions[i * 3] += Math.sin(0.1 * i + time) * 0.001;
-                positions[i * 2] += Math.sin(0.1 * i + time) * 0.002;
+                // positions[i * 2] += Math.sin(0.1 * i + time) * 0.002;
                 // positions[i * 1] += Math.sin(0.1 * i + time) * 0.001;
                 
                 // positions[i * 2] += Math.sin(0.1 * i + time) * 0.002;
