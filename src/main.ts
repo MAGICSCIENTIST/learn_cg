@@ -189,14 +189,36 @@ function drawWater() {
 	// 参数
 	// ----- water ------
 	let flameParams: any = {
-		v: [new THREE.Vector3(0, 10, 0)],
+		v: [new THREE.Vector3(3, 3, 0)],
+		// a: new THREE.Vector3(0, 1, 0),
         p: [new THREE.Vector3(0, 1, 0)],
-        ground: new THREE.Plane(new THREE.Vector3(0, 1, 0), 2),
+
+		// v: [
+		// 	new THREE.Vector3(0, -3, 0),
+		// 	new THREE.Vector3(0, -3, 0),
+		// 	new THREE.Vector3(0, -3, 0),
+		// 	new THREE.Vector3(0, -3, 0),
+		// ],
+		// p: [
+		// 	new THREE.Vector3(0, 0, 0),
+		// 	new THREE.Vector3(1, 0, 1),
+		// 	new THREE.Vector3(1, 0, 0),
+		// 	new THREE.Vector3(0, 0, 1)
+		// ],
+        ground: new THREE.Plane(new THREE.Vector3(0, 1, 0), 10),
 		countPerGroup: 30,
+		color: [
+            new THREE.Color("#039BE5"),
+            new THREE.Color("#039BE5"),            
+            new THREE.Color("#F5F5F5"),
+
+			// new THREE.Color("#FF3D00"),			
+            // new THREE.Color("#EF6C00"),
+        ],
         Epsilon: 1 / 100,// 越小越慢
-		shake_position: 0.1,
-        shake_speed: 1,
-        shake_time: 0.5,
+		shake_position: 0.01,
+        shake_speed: 0.1, // 越大越散开
+        shake_time: 1,
         shake_size: 1
 	}
 
@@ -247,7 +269,7 @@ function drawWater() {
 
 	// Camera
 	const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-	camera.position.set(0, 0, 3)
+	camera.position.set(0, 0, 5)	
 
 	//control
 	const controls = new OrbitControls(camera, canvas)
